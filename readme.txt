@@ -4,7 +4,7 @@ Donate link: https://www.gittip.com/ilanco/
 Tags: gravity, forms, gravity forms, gravity form, currency, multiple 
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 0.2
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,13 +29,19 @@ the value to the desired currency for this form.
 
 == Changelog ==
 
+= 1.0 =
+* Release!
+
 = 0.2 =
 * Wordpress plugin compatible readme.txt
 
 = 0.1 =
-* First release
+* Initial release
 
 == Upgrade Notice ==
+
+= 1.0 =
+Nothing
 
 = 0.2 =
 Nothing
