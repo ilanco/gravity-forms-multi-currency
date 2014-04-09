@@ -3,8 +3,8 @@ Contributors: ilanco
 Donate link: https://www.gittip.com/ilanco/
 Tags: gravity, forms, gravity forms, gravity form, currency, multiple 
 Requires at least: 3.0.1
-Tested up to: 3.5
-Stable tag: 1.7
+Tested up to: 3.8.1
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ in there choose the "Advanced" tab. There will be a dropdown labeled "Currency".
 the value to the desired currency for this form.
 
 == Changelog ==
+
+= 1.7.1 =
+Fixed setting currency after upgrade to Gravity Forms 1.7.3
 
 = 1.7 =
 Gravity Forms 1.7 compatibility

@@ -3,7 +3,7 @@
  * Plugin Name: Gravity Forms Multi Currency
  * Plugin URI: https://github.com/ilanco/gravity-forms-multi-currency
  * Description: Per form currency for Gravity Forms.
- * Version: 1.7
+ * Version: 1.7.1
  * Author: Ilan Cohen <ilanco@gmail.com>
  * Author URI: https://github.com/ilanco
  */
@@ -16,7 +16,7 @@ if (defined('WP_DEBUG') && (WP_DEBUG == true)) {
 if (!defined('ABSPATH'))
   die(false);
 
-define('GF_MC_VERSION', '1.7');
+define('GF_MC_VERSION', '1.7.1');
 
 define('GF_MC_MAINFILE', __FILE__);
 
@@ -97,7 +97,7 @@ class GFMultiCurrency
     {
         ob_start();
         include 'tpl/custom_form_settings.php';
-        $settings['Form Basics']['form_custom_currency_setting'] = ob_get_contents();
+        $settings['Form Basics']['form_currency_setting'] = ob_get_contents();
         ob_end_clean();
 
         return $settings;
@@ -105,7 +105,7 @@ class GFMultiCurrency
 
     public function save_custom_form_settings($form)
     {
-        $form['custom_currency'] = rgpost('form_custom_currency');
+        $form['currency'] = rgpost('form_currency');
 
         return $form;
     }
@@ -115,10 +115,10 @@ class GFMultiCurrency
         ?>
         <script type='text/javascript'>
         jQuery(function($) {
-            $("#form_custom_currency").change(function() {
+            $("#form_currency").change(function() {
                 form.currency = this.value;
             });
-            $("#form_custom_currency").val(form.currency);
+            $("#form_currency").val(form.currency);
         });
         </script>
         <?php
