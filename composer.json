@@ -1,0 +1,6 @@
+{
+    "name" : "ilanco/gravity-forms-multi-currency",
+    "description" : "Gravity Forms Multi Currency",
+    "type" : "wordpress-plugin",
+    "version" : "1.7.1"
+}
