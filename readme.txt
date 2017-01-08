@@ -1,10 +1,11 @@
 === Gravity Forms Multi Currency ===
-Contributors: ilanco
+Contributors: ilanco, asp@p0v.net
 Donate link: https://www.gittip.com/ilanco/
 Tags: gravity, forms, gravity forms, gravity form, currency, multiple 
 Requires at least: 3.0.1
-Tested up to: 3.8.1
-Stable tag: 1.7.1
+Tested Wordpress Version to: 4.7
+Tested Gravity Forms Version to: 2.1.2
+Stable tag: 1.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +29,10 @@ in there choose the "Advanced" tab. There will be a dropdown labeled "Currency".
 the value to the desired currency for this form.
 
 == Changelog ==
+
+= 1.7.2 = 
+
+Update calls to reference GFAPI instead of RGFormsModel (as it's deprecated). 
 
 = 1.7.1 =
 Fixed setting currency after upgrade to Gravity Forms 1.7.3

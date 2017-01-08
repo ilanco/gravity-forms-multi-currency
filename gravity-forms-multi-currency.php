@@ -3,7 +3,7 @@
  * Plugin Name: Gravity Forms Multi Currency
  * Plugin URI: https://github.com/ilanco/gravity-forms-multi-currency
  * Description: Per form currency for Gravity Forms.
- * Version: 1.7.1
+ * Version: 1.7.2
  * Author: Ilan Cohen <ilanco@gmail.com>
  * Author URI: https://github.com/ilanco
  */
@@ -63,11 +63,11 @@ class GFMultiCurrency
     {
         $form_id = isset($_POST["gform_submit"]) ? $_POST["gform_submit"] : 0;
         if ($form_id) {
-            $form_info = RGFormsModel::get_form($form_id);
+            $form_info = GFAPI::get_form($form_id);
             $is_valid_form = $form_info && $form_info->is_active;
 
             if ($is_valid_form) {
-                $form = RGFormsModel::get_form_meta($form_id);
+                $form = GFAPI::get_form($form_id);
                 if (isset($form['currency']) && $form['currency']) {
                     $this->currency = $form['currency'];
                 }
