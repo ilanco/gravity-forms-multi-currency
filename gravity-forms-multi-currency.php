@@ -5,7 +5,7 @@
  * Description: Per form currency for Gravity Forms.
  * Version: 1.7.2
  * Author: Ilan Cohen <ilanco@gmail.com>, Aaron St. Pierre <asp@ssolns.com>
- * Author URI: https://github.com/ilanco, https://github.com/aaronstpierre
+ * Author URI: https://github.com/aaronstpierre
  */
 
 if (defined('WP_DEBUG') && (WP_DEBUG == true)) {
