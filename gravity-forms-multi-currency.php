@@ -16,7 +16,7 @@ if (defined('WP_DEBUG') && (WP_DEBUG == true)) {
 if (!defined('ABSPATH'))
   die(false);
 
-define('GF_MC_VERSION', '1.7.1');
+define('GF_MC_VERSION', '1.7.2');
 
 define('GF_MC_MAINFILE', __FILE__);
 
@@ -27,6 +27,8 @@ class GFMultiCurrency
     private static $instance;
 
     private $currency;
+
+	private $gf_mc_debug; 
 
     private function __construct()
     {
@@ -61,13 +63,27 @@ class GFMultiCurrency
 
     public function form_process()
     {
+		// asp: setup way to dump the form_info; probably a better way to do this
+		$gf_mc_debug = 0; 
+
         $form_id = isset($_POST["gform_submit"]) ? $_POST["gform_submit"] : 0;
+
         if ($form_id) {
-            $form_info = GFAPI::get_form($form_id);
-            $is_valid_form = $form_info && $form_info->is_active;
+			// asp: use new GFAPI class returns an array 
+            $form_info = GFAPI::get_form( $form_id );
+		
+			if ( $gf_mc_debug ) { 	
+				echo "form_id: $form_id<br/>"; 
+				echo 'is_active:' . $form_info['is_active'] . '<br/>'; 
+				echo '<pre>' . var_export($form_info, true) . '</pre>'; 
+			} 
+	
+			// asp: since the result is an array check for 
+  			// asp: is_active using array notation 
+            $is_valid_form = $form_info && $form_info['is_active'];
 
             if ($is_valid_form) {
-                $form = GFAPI::get_form($form_id);
+                $form = GFAPI::get_form( $form_id );
                 if (isset($form['currency']) && $form['currency']) {
                     $this->currency = $form['currency'];
                 }
