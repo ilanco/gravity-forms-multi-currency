@@ -1,5 +1,5 @@
 === Gravity Forms Multi Currency ===
-Contributors: ilanco, asp@p0v.net
+Contributors: ilanco
 Donate link: https://www.gittip.com/ilanco/
 Tags: gravity, forms, gravity forms, gravity form, currency, multiple 
 Requires at least: 3.0.1

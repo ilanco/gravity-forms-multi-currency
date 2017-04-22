@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Gravity Forms Multi Currency
- * Plugin URI: https://github.com/aaronstpierre/gravity-forms-multi-currency
+ * Plugin URI: https://github.com/ilanco/gravity-forms-multi-currency
  * Description: Per form currency for Gravity Forms.
  * Version: 1.7.2
- * Author: Ilan Cohen <ilanco@gmail.com>, Aaron St. Pierre <asp@ssolns.com>
- * Author URI: https://github.com/aaronstpierre
+ * Author: Ilan Cohen <ilanco@gmail.com>
+ * Author URI: https://github.com/ilanco
  */
 
 if (defined('WP_DEBUG') && (WP_DEBUG == true)) {
@@ -63,23 +63,23 @@ class GFMultiCurrency
 
     public function form_process()
     {
-		// asp: setup way to dump the form_info; probably a better way to do this
-		$gf_mc_debug = 0; 
+        // asp: setup way to dump the form_info; probably a better way to do this
+        $gf_mc_debug = 0; 
 
         $form_id = isset($_POST["gform_submit"]) ? $_POST["gform_submit"] : 0;
 
         if ($form_id) {
-			// asp: use new GFAPI class returns an array 
+            // asp: use new GFAPI class returns an array 
             $form_info = GFAPI::get_form( $form_id );
 		
-			if ( $gf_mc_debug ) { 	
-				echo "form_id: $form_id<br/>"; 
-				echo 'is_active:' . $form_info['is_active'] . '<br/>'; 
-				echo '<pre>' . var_export($form_info, true) . '</pre>'; 
-			} 
+            if ( $gf_mc_debug ) { 	
+              echo "form_id: $form_id<br/>"; 
+              echo 'is_active:' . $form_info['is_active'] . '<br/>'; 
+              echo '<pre>' . var_export($form_info, true) . '</pre>'; 
+            } 
 	
-			// asp: since the result is an array check for 
-  			// asp: is_active using array notation 
+            // asp: since the result is an array check for 
+            // asp: is_active using array notation 
             $is_valid_form = $form_info && $form_info['is_active'];
 
             if ($is_valid_form) {
